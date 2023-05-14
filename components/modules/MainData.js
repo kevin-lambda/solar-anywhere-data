@@ -1,10 +1,13 @@
 import React from "react"
-import { DataComparison } from "../other-components"
+import { DataComparison, InputControls } from "../other-components"
 
 function MainData() {
+  // have state here
+
   return (
     <div>
       MainData
+      <InputControls />
       <DataComparison />
     </div>
   )
