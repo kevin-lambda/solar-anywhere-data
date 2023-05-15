@@ -2,16 +2,40 @@ import React from "react"
 const ghiData = require("../../data/parseData.js")
 
 function DataComparison(props) {
+  // console.log(props)
+
+  const {
+    baselineTargetDailyEnergy,
+    baselineSolarArea,
+    panelEff,
+    areaBandCompareFactor,
+    areaOverrideFlag,
+    areaOverride,
+  } = props
+
   // ! incoming variables
-  const targetEnergy = 1000 //  kWh/day
-  const solarEff = 0.2 //  %
-  const solarArea = 1000 //  m^2
+  let targetEnergy = baselineTargetDailyEnergy //  kWh/day
+  let solarEff = panelEff //  %
+  let solarArea = 0 //  m^2
 
-  const lessAreaFactor = 0.9
-  const moreAreaFactor = 1.1
+  if (areaOverrideFlag) {
+    console.log("area override is true")
+    solarArea = areaOverride //m^2
+  } else {
+    solarArea = baselineSolarArea //  m^2
+  }
 
-  const dataDays = ghiData.length
-  const dataYears = (dataDays / 365).toFixed(1)
+  let areaBandFactor = parseFloat(areaBandCompareFactor)
+  console.log(typeof areaBandFactor)
+  console.log(areaBandFactor)
+
+  let lessAreaFactor = parseFloat(1 - areaBandFactor)
+  let moreAreaFactor = parseFloat(1 + areaBandFactor)
+
+  console.log(lessAreaFactor, moreAreaFactor)
+
+  let dataDays = ghiData.length
+  let dataYears = (dataDays / 365).toFixed(1)
 
   let baseOutput = convertGhiToEffectiveSolarOutput(
     ghiData,
@@ -51,15 +75,17 @@ function DataComparison(props) {
       </p>
       <p>
         more area factor: days demand met {moreCheck.demandMet}. days demand not
-        met {moreCheck.demandNotMet}
+        met {moreCheck.demandNotMet} at solar area of{" "}
+        {solarArea * moreAreaFactor} m^2
       </p>
       <p>
         base area factor: days demand met {baseCheck.demandMet}. days demand not
-        met {baseCheck.demandNotMet}
+        met {baseCheck.demandNotMet} at solar area of {solarArea} m^2
       </p>
       <p>
         less area factor: days demand met {lessCheck.demandMet}. days demand not
-        met {lessCheck.demandNotMet}
+        met {lessCheck.demandNotMet} at solar area of{" "}
+        {solarArea * lessAreaFactor} m^2
       </p>
     </div>
   )
@@ -73,6 +99,8 @@ function convertGhiToEffectiveSolarOutput(ghiData, solarArea, solarEff) {
 }
 
 function checkDemandMeet(targetEnergy, effectiveSolarOutputData) {
+  console.log(effectiveSolarOutputData)
+
   let demandCountObj = {
     demandMet: 0,
     demandNotMet: 0,
