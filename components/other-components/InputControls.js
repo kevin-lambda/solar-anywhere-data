@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState } from "react"
 
 // target system power, solar eff, solar area override, band factor, area override flag
@@ -47,7 +49,7 @@ function InputControls(props) {
     <div className="section">
       <h2 className="title">Input controls</h2>
 
-      <p>debug</p>
+      {/* <p>debug</p>
       <p>targetSystemPowerForm: {targetSystemPowerForm}</p>
       <p>areaBandCompareFactorForm: {areaBandCompareFactorForm}</p>
 
@@ -55,7 +57,7 @@ function InputControls(props) {
       <p>areaOverrideForm: {areaOverrideForm}</p>
 
       <p>tempPeakSunSfForm: {tempPeakSunSfForm}</p>
-      <p>panelEffForm: {panelEffForm}</p>
+      <p>panelEffForm: {panelEffForm}</p> */}
 
       <br />
       <form onSubmit={handleSubmit}>

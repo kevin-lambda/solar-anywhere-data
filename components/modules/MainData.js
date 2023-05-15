@@ -38,7 +38,6 @@ function MainData() {
 
   return (
     <div>
-      MainData.js
       <p className="title">
         temporary maindata module state data for debugging
       </p>

@@ -2,8 +2,6 @@ import React from "react"
 const ghiData = require("../../data/parseData.js")
 
 function DataComparison(props) {
-  console.log("===========data comparison.js")
-
   const {
     baselineTargetDailyEnergy,
     baselineSolarArea,
@@ -13,12 +11,9 @@ function DataComparison(props) {
     areaOverride,
   } = props
 
-  // ! incoming variables
   let targetEnergy = baselineTargetDailyEnergy //  kWh/day
   let solarEff = panelEff //  %
   let solarArea = 0 //  m^2
-
-  console.log(areaOverrideFlag)
 
   if (areaOverrideFlag) {
     solarArea = areaOverride //m^2

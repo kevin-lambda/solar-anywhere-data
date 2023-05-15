@@ -1,4 +1,5 @@
 import "bulma/css/bulma.min.css"
+import { Footer, Navbar } from "@/components/other-components"
 
 export const metadata = {
   title: "Create Next App",
@@ -8,7 +9,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }
