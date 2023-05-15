@@ -2,7 +2,7 @@ import React from "react"
 const ghiData = require("../../data/parseData.js")
 
 function DataComparison(props) {
-  // console.log(props)
+  console.log("===========data comparison.js")
 
   const {
     baselineTargetDailyEnergy,
@@ -18,21 +18,18 @@ function DataComparison(props) {
   let solarEff = panelEff //  %
   let solarArea = 0 //  m^2
 
+  console.log(areaOverrideFlag)
+
   if (areaOverrideFlag) {
-    console.log("area override is true")
     solarArea = areaOverride //m^2
   } else {
     solarArea = baselineSolarArea //  m^2
   }
 
   let areaBandFactor = parseFloat(areaBandCompareFactor)
-  console.log(typeof areaBandFactor)
-  console.log(areaBandFactor)
 
   let lessAreaFactor = parseFloat(1 - areaBandFactor)
   let moreAreaFactor = parseFloat(1 + areaBandFactor)
-
-  console.log(lessAreaFactor, moreAreaFactor)
 
   let dataDays = ghiData.length
   let dataYears = (dataDays / 365).toFixed(1)
@@ -99,8 +96,6 @@ function convertGhiToEffectiveSolarOutput(ghiData, solarArea, solarEff) {
 }
 
 function checkDemandMeet(targetEnergy, effectiveSolarOutputData) {
-  console.log(effectiveSolarOutputData)
-
   let demandCountObj = {
     demandMet: 0,
     demandNotMet: 0,
