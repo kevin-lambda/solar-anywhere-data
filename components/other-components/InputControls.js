@@ -12,6 +12,7 @@ function InputControls(props) {
     setPanelEff,
     setTargetSystemPower,
     setTempPeakSunSf,
+    setTargetEnergyOverride,
     targetSystemPower,
     panelEff,
     tempPeakSunSf,
@@ -19,6 +20,8 @@ function InputControls(props) {
     areaOverrideFlag,
     areaOverride,
     baselineSolarArea,
+    targetEnergyOverride,
+    baselineTargetDailyEnergy,
   } = props
 
   const [targetSystemPowerForm, setTargetSystemPowerForm] =
@@ -32,33 +35,27 @@ function InputControls(props) {
   const [areaOverrideFlagForm, setAreaOverrideFlagForm] =
     useState(areaOverrideFlag)
   const [areaOverrideForm, setAreaOverrideForm] = useState(areaOverride)
+  const [energyOverrideForm, setEnergyOverrideForm] = useState(
+    baselineTargetDailyEnergy
+  )
   const [panelEffForm, setPanelEffForm] = useState(panelEff)
 
   function handleSubmit(e) {
     e.preventDefault()
     setTargetSystemPower(targetSystemPowerForm)
 
-    setAreaBandCompareFactor(areaBandCompareFactorForm)
-    setAreaOverride(areaOverrideForm)
     setAreaOverrideFlag(areaOverrideFlagForm)
+
     setPanelEff(panelEffForm)
+    setAreaOverride(areaOverrideForm)
+    // setTargetEnergyOverride(parseFloat(energyOverrideForm))
     setTempPeakSunSf(tempPeakSunSfForm)
+    setAreaBandCompareFactor(areaBandCompareFactorForm)
   }
 
   return (
     <div className="section">
       <h2 className="title">Input controls</h2>
-
-      {/* <p>debug</p>
-      <p>targetSystemPowerForm: {targetSystemPowerForm}</p>
-      <p>areaBandCompareFactorForm: {areaBandCompareFactorForm}</p>
-
-      <p>areaOverrideFlagForm: {areaOverrideFlagForm ? "true" : "false"}</p>
-      <p>areaOverrideForm: {areaOverrideForm}</p>
-
-      <p>tempPeakSunSfForm: {tempPeakSunSfForm}</p>
-      <p>panelEffForm: {panelEffForm}</p> */}
-
       <br />
       <form onSubmit={handleSubmit}>
         <label>
@@ -100,7 +97,8 @@ function InputControls(props) {
           <input
             name="panelEff"
             type="number"
-            onChange={(e) => setAreaBandCompareFactorForm(e.target.value)}
+            step="any"
+            onChange={(e) => setPanelEffForm(e.target.value)}
             defaultValue={panelEff}
           />
         </label>
@@ -126,6 +124,16 @@ function InputControls(props) {
           />
         </label>
         <br />
+        {/* <label>
+          set override target daily energy:
+          <input
+            name="dailyEnergyOverride"
+            type="number"
+            onChange={(e) => setEnergyOverrideForm(e.target.value)}
+            defaultValue={baselineTargetDailyEnergy}
+          />
+        </label>
+        <br /> */}
         <input type="submit" value="Submit" />
       </form>
     </div>

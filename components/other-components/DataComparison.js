@@ -9,6 +9,7 @@ function DataComparison(props) {
     areaBandCompareFactor,
     areaOverrideFlag,
     areaOverride,
+    // targetEnergyOverride,
   } = props
 
   let targetEnergy = baselineTargetDailyEnergy //  kWh/day
@@ -17,8 +18,12 @@ function DataComparison(props) {
 
   if (areaOverrideFlag) {
     solarArea = areaOverride //m^2
+    // let parsedTargetEnergy = parseFloat(targetEnergyOverride)
+    // targetEnergy = parsedTargetEnergy
   } else {
     solarArea = baselineSolarArea //  m^2
+    // let parsedTargetEnergy = parseFloat(baselineTargetDailyEnergy)
+    // targetEnergy = parsedTargetEnergy
   }
 
   let areaBandFactor = parseFloat(areaBandCompareFactor)

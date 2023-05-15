@@ -26,6 +26,7 @@ function MainData() {
   // override variables
   const [areaOverrideFlag, setAreaOverrideFlag] = useState(false)
   const [areaOverride, setAreaOverride] = useState(0)
+  // const [targetEnergyOverride, setTargetEnergyOverride] = useState(0)
 
   useEffect(() => {
     setBaselineSolarArea(
@@ -58,6 +59,7 @@ function MainData() {
         setAreaBandCompareFactor={setAreaBandCompareFactor}
         setAreaOverrideFlag={setAreaOverrideFlag}
         setAreaOverride={setAreaOverride}
+        // setTargetEnergyOverride={setTargetEnergyOverride}
         targetSystemPower={targetSystemPower}
         panelEff={panelEff}
         tempPeakSunSf={tempPeakSunSf}
@@ -65,6 +67,8 @@ function MainData() {
         areaOverrideFlag={areaOverrideFlag}
         areaOverride={areaOverride}
         baselineSolarArea={baselineSolarArea}
+        // targetEnergyOverride={targetEnergyOverride}
+        baselineTargetDailyEnergy={baselineTargetDailyEnergy}
       />
       <DataComparison
         baselineTargetDailyEnergy={baselineTargetDailyEnergy}
@@ -73,6 +77,7 @@ function MainData() {
         areaBandCompareFactor={areaBandCompareFactor}
         areaOverrideFlag={areaOverrideFlag}
         areaOverride={areaOverride}
+        // targetEnergyOverride={targetEnergyOverride}
       />
     </div>
   )
