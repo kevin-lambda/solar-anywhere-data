@@ -73,16 +73,16 @@ function DataComparison(props) {
       <p>
         more area factor: days demand met {moreCheck.demandMet}. days demand not
         met {moreCheck.demandNotMet} at solar area of{" "}
-        {solarArea * moreAreaFactor} m^2
+        {parseInt(solarArea * moreAreaFactor)} m^2
       </p>
       <p>
         base area factor: days demand met {baseCheck.demandMet}. days demand not
-        met {baseCheck.demandNotMet} at solar area of {solarArea} m^2
+        met {baseCheck.demandNotMet} at solar area of {parseInt(solarArea)} m^2
       </p>
       <p>
         less area factor: days demand met {lessCheck.demandMet}. days demand not
         met {lessCheck.demandNotMet} at solar area of{" "}
-        {solarArea * lessAreaFactor} m^2
+        {parseInt(solarArea * lessAreaFactor)} m^2
       </p>
     </div>
   )

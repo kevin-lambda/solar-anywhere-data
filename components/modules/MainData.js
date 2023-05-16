@@ -46,7 +46,6 @@ function MainData() {
       </section>
 
       <section className="section">
-        <h2 className="title">temporary section title, data comparison</h2>
         <DataComparison
           baselineTargetDailyEnergy={baselineTargetDailyEnergy}
           baselineSolarArea={baselineSolarArea}
@@ -58,7 +57,6 @@ function MainData() {
         />
       </section>
       <section className="section">
-        <h2 className="title">input controls</h2>
         <InputControls
           setTargetSystemPower={setTargetSystemPower}
           setPanelEff={setPanelEff}

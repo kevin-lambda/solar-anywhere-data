@@ -74,7 +74,6 @@ function InputControls(props) {
             </div>
           </div>
         </div>
-
         <div className="field is-horizontal">
           <div className="field-label is-normal">
             <label className="label">Comparison band</label>
@@ -94,9 +93,7 @@ function InputControls(props) {
             </div>
           </div>
         </div>
-
         <br />
-
         <div className="field is-horizontal">
           <div className="field-label is-normal">
             <label className="checkbox">
@@ -116,47 +113,90 @@ function InputControls(props) {
             </div>
           </div>
         </div>
-
-        <div className="field is-horizontal">
-          <div className="field-label is-normal">
-            <label className="label">Solar panel area (m^2)</label>
-          </div>
-          <div className="field-body">
-            <div className="field">
-              <div className="control">
-                <input
-                  className="input"
-                  name="areaOverride"
-                  type="number"
-                  onChange={(e) => setAreaOverrideForm(e.target.value)}
-                  defaultValue={baselineSolarArea}
-                />
+        {areaOverrideFlagForm ? (
+          <>
+            <div className="field is-horizontal">
+              <div className="field-label is-normal">
+                <label className="label">Solar panel area (m^2)</label>
+              </div>
+              <div className="field-body">
+                <div className="field">
+                  <div className="control">
+                    <input
+                      className="input"
+                      name="areaOverride"
+                      type="number"
+                      onChange={(e) => setAreaOverrideForm(e.target.value)}
+                      defaultValue={baselineSolarArea}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        <div className="field is-horizontal">
-          <div className="field-label is-normal">
-            <label className="label">Panel efficiency</label>
-          </div>
-          <div className="field-body">
-            <div className="field">
-              <div className="control">
-                <input
-                  className="input"
-                  name="panelEff"
-                  type="number"
-                  step="any"
-                  onChange={(e) => setPanelEffForm(e.target.value)}
-                  defaultValue={panelEff}
-                />
+            <div className="field is-horizontal">
+              <div className="field-label is-normal">
+                <label className="label">Panel efficiency</label>
+              </div>
+              <div className="field-body">
+                <div className="field">
+                  <div className="control">
+                    <input
+                      className="input"
+                      name="panelEff"
+                      type="number"
+                      step="any"
+                      onChange={(e) => setPanelEffForm(e.target.value)}
+                      defaultValue={panelEff}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
+          </>
+        ) : (
+          <fieldset disabled>
+            <div className="field is-horizontal">
+              <div className="field-label is-normal">
+                <label className="label">Solar panel area (m^2)</label>
+              </div>
+              <div className="field-body">
+                <div className="field">
+                  <div className="control">
+                    <input
+                      className="input"
+                      name="areaOverride"
+                      type="number"
+                      onChange={(e) => setAreaOverrideForm(e.target.value)}
+                      defaultValue={baselineSolarArea}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
 
-        <div className="field is-horizontal">
+            <div className="field is-horizontal mb-3">
+              <div className="field-label is-normal">
+                <label className="label">Panel efficiency</label>
+              </div>
+              <div className="field-body">
+                <div className="field">
+                  <div className="control">
+                    <input
+                      className="input"
+                      name="panelEff"
+                      type="number"
+                      step="any"
+                      onChange={(e) => setPanelEffForm(e.target.value)}
+                      defaultValue={panelEff}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        )}
+
+        {/* <div className="field is-horizontal">
           <div className="field-label is-normal">
             <label className="label">Peak sun (hours)</label>
           </div>
@@ -173,8 +213,7 @@ function InputControls(props) {
               </div>
             </div>
           </div>
-        </div>
-
+        </div> */}
         {/* <label>
           set override target daily energy:
           <input
