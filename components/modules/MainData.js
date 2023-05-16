@@ -39,46 +39,59 @@ function MainData() {
 
   return (
     <div>
-      <p className="title">
-        temporary maindata module state data for debugging
-      </p>
-      <p>starting with target system power {targetSystemPower} kW</p>
-      <p>assumed typical baseline solar Area {baselineSolarArea} m^2</p>
-      <p>
-        assumed typical baseline target daily total energy{" "}
-        {baselineTargetDailyEnergy} kWh
-      </p>
-      <p>
-        this would be approximately {numSolarArrays} solar arrays of typical
-        commercial size of 78in x 39in
-      </p>
-      <InputControls
-        setTargetSystemPower={setTargetSystemPower}
-        setPanelEff={setPanelEff}
-        setTempPeakSunSf={setTempPeakSunSf}
-        setAreaBandCompareFactor={setAreaBandCompareFactor}
-        setAreaOverrideFlag={setAreaOverrideFlag}
-        setAreaOverride={setAreaOverride}
-        // setTargetEnergyOverride={setTargetEnergyOverride}
-        targetSystemPower={targetSystemPower}
-        panelEff={panelEff}
-        tempPeakSunSf={tempPeakSunSf}
-        areaBandCompareFactor={areaBandCompareFactor}
-        areaOverrideFlag={areaOverrideFlag}
-        areaOverride={areaOverride}
-        baselineSolarArea={baselineSolarArea}
-        // targetEnergyOverride={targetEnergyOverride}
-        baselineTargetDailyEnergy={baselineTargetDailyEnergy}
-      />
-      <DataComparison
-        baselineTargetDailyEnergy={baselineTargetDailyEnergy}
-        baselineSolarArea={baselineSolarArea}
-        panelEff={panelEff}
-        areaBandCompareFactor={areaBandCompareFactor}
-        areaOverrideFlag={areaOverrideFlag}
-        areaOverride={areaOverride}
-        // targetEnergyOverride={targetEnergyOverride}
-      />
+      <section className="hero">
+        <div className="hero-body">
+          <p className="title">solar energy output historical model</p>
+        </div>
+      </section>
+
+      <section className="section">
+        <h2 className="title">temporary section title, data comparison</h2>
+        <DataComparison
+          baselineTargetDailyEnergy={baselineTargetDailyEnergy}
+          baselineSolarArea={baselineSolarArea}
+          panelEff={panelEff}
+          areaBandCompareFactor={areaBandCompareFactor}
+          areaOverrideFlag={areaOverrideFlag}
+          areaOverride={areaOverride}
+          // targetEnergyOverride={targetEnergyOverride}
+        />
+      </section>
+      <section className="section">
+        <h2 className="title">input controls</h2>
+        <InputControls
+          setTargetSystemPower={setTargetSystemPower}
+          setPanelEff={setPanelEff}
+          setTempPeakSunSf={setTempPeakSunSf}
+          setAreaBandCompareFactor={setAreaBandCompareFactor}
+          setAreaOverrideFlag={setAreaOverrideFlag}
+          setAreaOverride={setAreaOverride}
+          // setTargetEnergyOverride={setTargetEnergyOverride}
+          targetSystemPower={targetSystemPower}
+          panelEff={panelEff}
+          tempPeakSunSf={tempPeakSunSf}
+          areaBandCompareFactor={areaBandCompareFactor}
+          areaOverrideFlag={areaOverrideFlag}
+          areaOverride={areaOverride}
+          baselineSolarArea={baselineSolarArea}
+          // targetEnergyOverride={targetEnergyOverride}
+          baselineTargetDailyEnergy={baselineTargetDailyEnergy}
+        />
+      </section>
+
+      <section className="section">
+        <h2 className="title">tbd money compare section</h2>
+        <p>starting with target system power {targetSystemPower} kW</p>
+        <p>assumed typical baseline solar Area {baselineSolarArea} m^2</p>
+        <p>
+          assumed typical baseline target daily total energy{" "}
+          {baselineTargetDailyEnergy} kWh
+        </p>
+        <p>
+          this would be approximately {numSolarArrays} solar arrays of typical
+          commercial size of 78in x 39in
+        </p>
+      </section>
     </div>
   )
 }

@@ -2,8 +2,6 @@
 
 import React, { useState } from "react"
 
-// target system power, solar eff, solar area override, band factor, area override flag
-
 function InputControls(props) {
   const {
     setAreaBandCompareFactor,
@@ -25,7 +23,7 @@ function InputControls(props) {
   } = props
 
   const [targetSystemPowerForm, setTargetSystemPowerForm] =
-    useState(targetSystemPower) //kW
+    useState(targetSystemPower)
 
   const [tempPeakSunSfForm, setTempPeakSunSfForm] = useState(tempPeakSunSf)
   const [areaBandCompareFactorForm, setAreaBandCompareFactorForm] = useState(
@@ -58,72 +56,125 @@ function InputControls(props) {
       <h2 className="title">Input controls</h2>
       <br />
       <form onSubmit={handleSubmit}>
-        <label>
-          set target system power:{" "}
-          <input
-            name="systemPower"
-            type="number"
-            onChange={(e) => setTargetSystemPowerForm(e.target.value)}
-            defaultValue={targetSystemPower}
-          />
-        </label>
+        <div className="field is-horizontal">
+          <div className="field-label is-normal">
+            <label className="label">Target system power (kW) </label>
+          </div>
+          <div className="field-body">
+            <div className="field">
+              <div className="control">
+                <input
+                  className="input"
+                  name="systemPower"
+                  type="number"
+                  onChange={(e) => setTargetSystemPowerForm(e.target.value)}
+                  defaultValue={targetSystemPower}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="field is-horizontal">
+          <div className="field-label is-normal">
+            <label className="label">Comparison band</label>
+          </div>
+          <div className="field-body">
+            <div className="field">
+              <div className="control">
+                <input
+                  className="input"
+                  name="bandCompare"
+                  type="number"
+                  step="any"
+                  onChange={(e) => setAreaBandCompareFactorForm(e.target.value)}
+                  defaultValue={areaBandCompareFactor}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
         <br />
 
-        <label>
-          set peak sun hours:{" "}
-          <input
-            name="peakSunHours"
-            type="number"
-            onChange={(e) => setTempPeakSunSfForm(e.target.value)}
-            defaultValue={tempPeakSunSf}
-          />
-        </label>
-        <br />
+        <div className="field is-horizontal">
+          <div className="field-label is-normal">
+            <label className="checkbox">
+              <strong>Override baseline assumptions</strong>
+            </label>
+          </div>
+          <div className="field-body">
+            <div className="field">
+              <div className="control">
+                <input
+                  className="checkbox"
+                  name="overrideFlag"
+                  type="checkbox"
+                  onChange={(e) => setAreaOverrideFlagForm(e.target.checked)}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <label>
-          set band compare:{" "}
-          <input
-            name="bandCompare"
-            type="number"
-            step="any"
-            onChange={(e) => setAreaBandCompareFactorForm(e.target.value)}
-            defaultValue={areaBandCompareFactor}
-          />
-        </label>
-        <br />
+        <div className="field is-horizontal">
+          <div className="field-label is-normal">
+            <label className="label">Solar panel area (m^2)</label>
+          </div>
+          <div className="field-body">
+            <div className="field">
+              <div className="control">
+                <input
+                  className="input"
+                  name="areaOverride"
+                  type="number"
+                  onChange={(e) => setAreaOverrideForm(e.target.value)}
+                  defaultValue={baselineSolarArea}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <label>
-          set panel efficiency:{" "}
-          <input
-            name="panelEff"
-            type="number"
-            step="any"
-            onChange={(e) => setPanelEffForm(e.target.value)}
-            defaultValue={panelEff}
-          />
-        </label>
-        <br />
+        <div className="field is-horizontal">
+          <div className="field-label is-normal">
+            <label className="label">Panel efficiency</label>
+          </div>
+          <div className="field-body">
+            <div className="field">
+              <div className="control">
+                <input
+                  className="input"
+                  name="panelEff"
+                  type="number"
+                  step="any"
+                  onChange={(e) => setPanelEffForm(e.target.value)}
+                  defaultValue={panelEff}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <label>
-          override baseline solar panel area?{" "}
-          <input
-            name="overrideFlag"
-            type="checkbox"
-            onChange={(e) => setAreaOverrideFlagForm(e.target.checked)}
-          />
-        </label>
-        <br />
+        <div className="field is-horizontal">
+          <div className="field-label is-normal">
+            <label className="label">Peak sun (hours)</label>
+          </div>
+          <div className="field-body">
+            <div className="field">
+              <div className="control">
+                <input
+                  className="input"
+                  name="peakSunHours"
+                  type="number"
+                  onChange={(e) => setTempPeakSunSfForm(e.target.value)}
+                  defaultValue={tempPeakSunSf}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <label>
-          set override solar panel area:{" "}
-          <input
-            name="areaOverride"
-            type="number"
-            onChange={(e) => setAreaOverrideForm(e.target.value)}
-            defaultValue={baselineSolarArea}
-          />
-        </label>
-        <br />
         {/* <label>
           set override target daily energy:
           <input
@@ -134,7 +185,21 @@ function InputControls(props) {
           />
         </label>
         <br /> */}
-        <input type="submit" value="Submit" />
+
+        <div className="field is-horizontal">
+          <div className="field-label"></div>
+          <div className="field-body">
+            <div className="field">
+              <div className="control">
+                <input
+                  className="button is-primary"
+                  type="submit"
+                  value="Submit"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </form>
     </div>
   )
