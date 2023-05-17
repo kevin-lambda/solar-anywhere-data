@@ -41,10 +41,6 @@ function page() {
             The solar data type used is Global Horizontal Irradiance (GHI) W/m
             <sup>2</sup>
           </li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
         </ul>
       </section>
       <section className="section">
@@ -89,8 +85,6 @@ function page() {
           <li>
             Typical commercial solar panel array size = 78" x 39" <sub>[4]</sub>
           </li>
-          <li></li>
-          <li></li>
         </ul>
       </section>
       <section className="section">

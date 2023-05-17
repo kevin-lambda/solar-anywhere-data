@@ -195,35 +195,6 @@ function InputControls(props) {
           </fieldset>
         )}
 
-        {/* <div className="field is-horizontal">
-          <div className="field-label is-normal">
-            <label className="label">Peak sun (hours)</label>
-          </div>
-          <div className="field-body">
-            <div className="field">
-              <div className="control">
-                <input
-                  className="input"
-                  name="peakSunHours"
-                  type="number"
-                  onChange={(e) => setTempPeakSunSfForm(e.target.value)}
-                  defaultValue={tempPeakSunSf}
-                />
-              </div>
-            </div>
-          </div>
-        </div> */}
-        {/* <label>
-          set override target daily energy:
-          <input
-            name="dailyEnergyOverride"
-            type="number"
-            onChange={(e) => setEnergyOverrideForm(e.target.value)}
-            defaultValue={baselineTargetDailyEnergy}
-          />
-        </label>
-        <br /> */}
-
         <div className="field is-horizontal">
           <div className="field-label"></div>
           <div className="field-body">

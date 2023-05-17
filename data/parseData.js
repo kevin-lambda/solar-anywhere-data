@@ -1,5 +1,3 @@
-// import { data } from "./dataObj.js"
-
 const dataAll = require("./rawData.js")
 
 function getAllGhi(data) {

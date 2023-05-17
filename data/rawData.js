@@ -1,4 +1,3 @@
-// export
 const data = [
   { year: 2020, date: "1-Jan", ghi: 1462 },
   { year: 2020, date: "2-Jan", ghi: 2807 },
@@ -1188,5 +1187,4 @@ const data = [
   { year: 2023, date: "31-Mar", ghi: 6508 },
 ]
 
-// ! temporary?
 module.exports = data
