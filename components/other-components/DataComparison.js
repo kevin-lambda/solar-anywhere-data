@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react"
+import React, { useState } from "react"
 import {
   BarChart,
   Bar,
@@ -11,6 +11,7 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
+  ReferenceLine,
 } from "recharts"
 const ghiData = require("../../data/parseData.js")
 
@@ -22,7 +23,8 @@ function DataComparison(props) {
     areaBandCompareFactor,
     areaOverrideFlag,
     areaOverride,
-    // targetEnergyOverride,
+    numSolarArrays,
+    targetSystemPower,
   } = props
 
   let targetEnergy = baselineTargetDailyEnergy //  kWh/day
@@ -69,32 +71,28 @@ function DataComparison(props) {
 
   const data = [
     {
-      name: "Page A",
-      uv: 4000,
-      pv: 2400,
-      amt: 2400,
+      name: `${lessAreaFactor}%`,
+      Days: lessCheck.demandMet,
     },
     {
-      name: "Page B",
-      uv: 3000,
-      pv: 1398,
-      amt: 2210,
+      name: "Baseline",
+      Days: baseCheck.demandMet,
     },
     {
-      name: "Page C",
-      uv: 2000,
-      pv: 9800,
-      amt: 2290,
+      name: `${moreAreaFactor}%`,
+      Days: moreCheck.demandMet,
     },
   ]
 
-  return (
-    <div className="section">
-      <h2 className="title">Data section</h2>
+  console.log(areaOverrideFlag)
 
+  return (
+    <div className="section box">
       <div className="columns">
-        <div className="column is-half">
-          <h3 className="title is-5">Energy output days met</h3>
+        <div className="column is-three-fifths">
+          <h3 className="title is-5 has-text-centered">
+            Energy output days met vs Solar Area (m<sup>2</sup>)
+          </h3>
 
           <ResponsiveContainer width="100%" height={300}>
             <BarChart
@@ -103,43 +101,74 @@ function DataComparison(props) {
               data={data}
               margin={{
                 top: 0,
-                right: 0,
-                left: 0,
+                right: 5,
+                left: 10,
                 bottom: 0,
               }}
             >
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" />
-              <YAxis />
+              <YAxis
+                tickCount={6}
+                type="number"
+                domain={[0, 1250]}
+                label={{
+                  value: `Days`,
+                  angle: -90,
+                  position: "insideLeft",
+                }}
+              />
+              <ReferenceLine
+                y={1186}
+                label="Total Days"
+                stroke="red"
+                strokeDasharray="3 3"
+              />
               <Tooltip />
-              <Legend />
-              <Bar dataKey="pv" fill="#8884d8" />
+              <Bar dataKey="Days" fill="#8884d8" />
             </BarChart>
           </ResponsiveContainer>
         </div>
 
-        <div className="column">
-          <h3 className="title is-5">variables</h3>
-          <p>target energy kWh / day {targetEnergy}</p>
-          <p>solar eff % {solarEff}</p>
-          <p>solar area m^2 {solarArea}</p>
-          <p>less Area Factor {lessAreaFactor}</p>
-          <p>more Area Factor {moreAreaFactor}</p>
-          <p>{dataYears} years of data</p>
+        <div className="column is-two-fifths pl-5">
+          <h3 className="title is-5 has-text-centered">Inputs & stats</h3>
           <p>
-            more area factor: days demand met {moreCheck.demandMet}. days demand
-            not met {moreCheck.demandNotMet} at solar area of{" "}
-            {parseInt(solarArea * moreAreaFactor)} m^2
+            Target energy:{" "}
+            <span className="is-underlined">{targetEnergy} kWh / day</span>
+          </p>
+          <br />
+          <p>
+            Target solar area:{" "}
+            <span className="is-underlined">
+              {solarArea} m<sup>2</sup>
+            </span>
           </p>
           <p>
-            base area factor: days demand met {baseCheck.demandMet}. days demand
-            not met {baseCheck.demandNotMet} at solar area of{" "}
-            {parseInt(solarArea)} m^2
+            Target system power:{" "}
+            <span className="is-underlined">{targetSystemPower} kW</span>
           </p>
           <p>
-            less area factor: days demand met {lessCheck.demandMet}. days demand
-            not met {lessCheck.demandNotMet} at solar area of{" "}
-            {parseInt(solarArea * lessAreaFactor)} m^2
+            Solar panel efficiency:{" "}
+            <span className="is-underlined">{solarEff}%</span>
+          </p>
+          <br />
+          <p>
+            Model simulated with data over:{" "}
+            <span className="is-underlined">{dataYears} years</span>,{" "}
+            <span className="is-underlined">1186 days</span>
+          </p>
+          <p>
+            Number of solar arrays size 78" x 39":{" "}
+            <span className="is-underlined">{numSolarArrays}</span>
+          </p>
+          <p>
+            Peak solar irradience:{" "}
+            <span className="is-underlined">
+              1000 W/m<sup>2</sup>
+            </span>
+          </p>
+          <p>
+            Peak sun amount: <span className="is-underlined">5 hours</span>
           </p>
         </div>
       </div>

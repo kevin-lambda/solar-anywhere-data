@@ -15,9 +15,7 @@ function MainData() {
   //assumptions
   const peakSolarIrradience = 1000 // w/m^2
   const oneSolarArrayArea = 1.96 //m^2 from 78in x 39in
-  const numSolarArrays = parseFloat(
-    (baselineSolarArea / oneSolarArrayArea).toFixed(1)
-  )
+  const numSolarArrays = parseInt(baselineSolarArea / oneSolarArrayArea)
 
   const [panelEff, setPanelEff] = useState(0.2)
   const [tempPeakSunSf, setTempPeakSunSf] = useState(5)
@@ -45,7 +43,7 @@ function MainData() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section pb-1">
         <DataComparison
           baselineTargetDailyEnergy={baselineTargetDailyEnergy}
           baselineSolarArea={baselineSolarArea}
@@ -53,10 +51,12 @@ function MainData() {
           areaBandCompareFactor={areaBandCompareFactor}
           areaOverrideFlag={areaOverrideFlag}
           areaOverride={areaOverride}
+          numSolarArrays={numSolarArrays}
+          targetSystemPower={targetSystemPower}
           // targetEnergyOverride={targetEnergyOverride}
         />
       </section>
-      <section className="section">
+      <section className="section pb-1">
         <InputControls
           setTargetSystemPower={setTargetSystemPower}
           setPanelEff={setPanelEff}
@@ -77,7 +77,7 @@ function MainData() {
         />
       </section>
 
-      <section className="section">
+      {/* <section className="section">
         <h2 className="title">tbd money compare section</h2>
         <p>starting with target system power {targetSystemPower} kW</p>
         <p>assumed typical baseline solar Area {baselineSolarArea} m^2</p>
@@ -89,7 +89,7 @@ function MainData() {
           this would be approximately {numSolarArrays} solar arrays of typical
           commercial size of 78in x 39in
         </p>
-      </section>
+      </section> */}
     </div>
   )
 }
@@ -110,7 +110,7 @@ function getBaselineTargetDailyEnergy(targetSystemPower, tempPeakSunSf) {
 
 function getNumberArrays(baselineSolarArea, oneSolarArrayArea) {
   // console.log(parseFloat((baselineSolarArea / oneSolarArrayArea).toFixed(1)))
-  return parseFloat((baselineSolarArea / oneSolarArrayArea).toFixed(1))
+  return parseInt(baselineSolarArea / oneSolarArrayArea)
 }
 
 export default MainData

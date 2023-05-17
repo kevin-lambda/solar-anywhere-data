@@ -52,7 +52,7 @@ function InputControls(props) {
   }
 
   return (
-    <div className="section">
+    <div className="section box">
       <h2 className="title">Input controls</h2>
       <br />
       <form onSubmit={handleSubmit}>
@@ -76,7 +76,7 @@ function InputControls(props) {
         </div>
         <div className="field is-horizontal">
           <div className="field-label is-normal">
-            <label className="label">Comparison band</label>
+            <label className="label">Comparison band (%)</label>
           </div>
           <div className="field-body">
             <div className="field">
@@ -135,7 +135,7 @@ function InputControls(props) {
             </div>
             <div className="field is-horizontal">
               <div className="field-label is-normal">
-                <label className="label">Panel efficiency</label>
+                <label className="label">Panel efficiency (%)</label>
               </div>
               <div className="field-body">
                 <div className="field">
@@ -176,7 +176,7 @@ function InputControls(props) {
 
             <div className="field is-horizontal mb-3">
               <div className="field-label is-normal">
-                <label className="label">Panel efficiency</label>
+                <label className="label">Panel efficiency (%)</label>
               </div>
               <div className="field-body">
                 <div className="field">
@@ -233,7 +233,7 @@ function InputControls(props) {
                 <input
                   className="button is-primary"
                   type="submit"
-                  value="Submit"
+                  value="Accept"
                 />
               </div>
             </div>
