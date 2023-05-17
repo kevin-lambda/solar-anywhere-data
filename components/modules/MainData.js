@@ -39,7 +39,14 @@ function MainData() {
     <div>
       <section className="hero">
         <div className="hero-body">
-          <p className="title">solar energy output historical model</p>
+          <p className="title">
+            Prospective solar farm energy analysis based on historical
+            irradiance data
+          </p>
+          <p className="subtitle">
+            Given a system power, determine demand match of baseline energy
+            output in comparison to actual data
+          </p>
         </div>
       </section>
 
@@ -109,7 +116,6 @@ function getBaselineTargetDailyEnergy(targetSystemPower, tempPeakSunSf) {
 }
 
 function getNumberArrays(baselineSolarArea, oneSolarArrayArea) {
-  // console.log(parseFloat((baselineSolarArea / oneSolarArrayArea).toFixed(1)))
   return parseInt(baselineSolarArea / oneSolarArrayArea)
 }
 

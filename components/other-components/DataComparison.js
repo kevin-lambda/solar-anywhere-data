@@ -84,8 +84,6 @@ function DataComparison(props) {
     },
   ]
 
-  console.log(areaOverrideFlag)
-
   return (
     <div className="section box">
       <div className="columns">
@@ -133,8 +131,14 @@ function DataComparison(props) {
         <div className="column is-two-fifths pl-5">
           <h3 className="title is-5 has-text-centered">Inputs & stats</h3>
           <p>
-            Target energy:{" "}
-            <span className="is-underlined">{targetEnergy} kWh / day</span>
+            Target system power:{" "}
+            <span className="is-underlined">{targetSystemPower} kW</span>
+          </p>
+          <p>
+            Comparison Band:{" "}
+            <span className="is-underlined">
+              {lessAreaFactor}% to {moreAreaFactor}%
+            </span>
           </p>
           <br />
           <p>
@@ -144,12 +148,13 @@ function DataComparison(props) {
             </span>
           </p>
           <p>
-            Target system power:{" "}
-            <span className="is-underlined">{targetSystemPower} kW</span>
-          </p>
-          <p>
             Solar panel efficiency:{" "}
             <span className="is-underlined">{solarEff}%</span>
+          </p>
+          <br />
+          <p>
+            Target energy:{" "}
+            <span className="is-underlined">{targetEnergy} kWh / day</span>
           </p>
           <br />
           <p>
@@ -162,7 +167,7 @@ function DataComparison(props) {
             <span className="is-underlined">{numSolarArrays}</span>
           </p>
           <p>
-            Peak solar irradience:{" "}
+            Peak solar irradiance:{" "}
             <span className="is-underlined">
               1000 W/m<sup>2</sup>
             </span>

@@ -7,7 +7,6 @@ function getAllGhi(data) {
   data.map((element) => {
     ghiArray.push(element.ghi)
   })
-  // console.log(ghiArray)
   return ghiArray
 }
 

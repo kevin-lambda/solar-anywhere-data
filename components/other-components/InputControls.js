@@ -53,8 +53,7 @@ function InputControls(props) {
 
   return (
     <div className="section box">
-      <h2 className="title">Input controls</h2>
-      <br />
+      <h2 className="title">Input variables</h2>
       <form onSubmit={handleSubmit}>
         <div className="field is-horizontal">
           <div className="field-label is-normal">
