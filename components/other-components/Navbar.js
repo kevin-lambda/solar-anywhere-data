@@ -14,11 +14,11 @@ function Navbar() {
         <a className="navbar-item" href="/">
           Home
         </a>
-        <a className="navbar-item" href="/about">
-          About
-        </a>
         <a className="navbar-item" href="/analysis">
           Analysis Docs
+        </a>
+        <a className="navbar-item" href="/about">
+          About
         </a>
 
         {/* <a
