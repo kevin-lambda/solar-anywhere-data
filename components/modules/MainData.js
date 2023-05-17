@@ -37,9 +37,9 @@ function MainData() {
 
   return (
     <div>
-      <section className="hero">
+      <section className="hero hero-bg">
         <div className="hero-body">
-          <p className="title">Prospective solar farm energy analysis tool</p>
+          <p className="title">Solar energy analysis tool</p>
           <p className="subtitle">
             Given a system power, determine demand match of baseline energy
             output in comparison to historical data
