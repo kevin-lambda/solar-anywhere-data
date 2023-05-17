@@ -140,7 +140,7 @@ function DataComparison(props) {
               {lessAreaFactor}% to {moreAreaFactor}%
             </span>
           </p>
-          <br />
+
           <p>
             Target solar area:{" "}
             <span className="is-underlined">
@@ -151,7 +151,6 @@ function DataComparison(props) {
             Solar panel efficiency:{" "}
             <span className="is-underlined">{solarEff}%</span>
           </p>
-          <br />
           <p>
             Target energy:{" "}
             <span className="is-underlined">{targetEnergy} kWh / day</span>
@@ -174,6 +173,10 @@ function DataComparison(props) {
           </p>
           <p>
             Peak sun amount: <span className="is-underlined">5 hours</span>
+          </p>
+          <p>
+            Data Location:{" "}
+            <span className="is-underlined">37.762129, -122.467662</span>
           </p>
         </div>
       </div>

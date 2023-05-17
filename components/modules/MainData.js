@@ -39,13 +39,10 @@ function MainData() {
     <div>
       <section className="hero">
         <div className="hero-body">
-          <p className="title">
-            Prospective solar farm energy analysis based on historical
-            irradiance data
-          </p>
+          <p className="title">Prospective solar farm energy analysis tool</p>
           <p className="subtitle">
             Given a system power, determine demand match of baseline energy
-            output in comparison to actual data
+            output in comparison to historical data
           </p>
         </div>
       </section>
