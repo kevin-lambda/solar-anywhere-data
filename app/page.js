@@ -1,3 +1,5 @@
+"use client"
+
 import { MainData } from "@/components/modules/index.js"
 
 const ghiData = require("../data/parseData.js")
