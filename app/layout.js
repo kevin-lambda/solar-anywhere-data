@@ -1,4 +1,5 @@
 import "bulma/css/bulma.min.css"
+import "./globals.css"
 import { Footer, Navbar } from "@/components/other-components"
 
 export const metadata = {
