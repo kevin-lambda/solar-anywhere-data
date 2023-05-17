@@ -1,3 +1,0 @@
-- try using useMemo for the data calculation
-- try using useReducer for state... stuff?
-- try using useContext to get info from a distant parent?
