@@ -131,6 +131,12 @@ function DataComparison(props) {
         <div className="column is-two-fifths pl-5">
           <h3 className="title is-5 has-text-centered">Inputs & stats</h3>
           <p>
+            Baseline solar energy meets demand :{" "}
+            <span className="is-underlined">
+              {((baseCheck.demandMet / 1186) * 100).toFixed(1)}% of total days
+            </span>
+          </p>
+          <p>
             Target system power:{" "}
             <span className="is-underlined">{targetSystemPower} kW</span>
           </p>
