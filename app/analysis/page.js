@@ -14,9 +14,9 @@ function page() {
           <li>
             Daily energy data is from{" "}
             <a href="https://www.solaranywhere.com/" className="about-links">
-              Solar Anywhere
+              SolarAnywhere®
             </a>
-            , by{" "}
+            , of{" "}
             <a href="https://www.cleanpower.com/" className="about-links">
               Clean Power Research
             </a>

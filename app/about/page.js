@@ -43,9 +43,9 @@ function page() {
           This project is built with Next.js, React, Bulma css, rechart. The
           data source is from public database of{" "}
           <a href="https://www.solaranywhere.com/" className="about-links">
-            Solar Anywhere
+            SolarAnywhere®
           </a>
-          , a product of{" "}
+          , of{" "}
           <a href="https://www.cleanpower.com/" className="about-links">
             Clean Power Research
           </a>
