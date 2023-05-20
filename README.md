@@ -2,7 +2,7 @@
 
 This is a planning tool that simulates energy output of a solar energy project using historical data for 2020 to 2023 based in Inner Sunset neighborhood of San Francisco.
 
-Live site here: [https://vercel.com/kevin-lambda/solar-anywhere-data](https://vercel.com/kevin-lambda/solar-anywhere-data)
+Live site here: [https://solari-kl.vercel.app/](https://solari-kl.vercel.app/)
 
 ## About
 
@@ -18,6 +18,7 @@ To get to v1.0, next steps for this project are to incorporate costs. Which woul
 
 ## Acknowledgements
 
-- [Solar Anywhere](https://www.solaranywhere.com/) public data (of [Clean Power Research](https://www.cleanpower.com/))
+- [SolarAnywhere®](https://www.solaranywhere.com/) public data (of [Clean Power Research](https://www.cleanpower.com/))
+- SolarAnywhere® is a registered trademark of Clean Power Research, used with permission.
 
 ![cover-page](./assets/coverpage.jpg)
