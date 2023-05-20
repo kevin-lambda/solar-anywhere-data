@@ -11,9 +11,10 @@ function page() {
       <section className="section">
         <h2 className="subtitle">Project</h2>
         <p>
-          This is a planning tool that simulates energy output of a solar energy
-          project using historical data for 2020 to 2023 based in Inner Sunset
-          neighborhood of San Francisco.
+          This is a learning project where I wanted to make a planning tool that
+          simulates energy output of a solar energy project using historical
+          data for 2020 to 2023 based in Inner Sunset neighborhood of San
+          Francisco.
         </p>
         <br />
         <p>
@@ -31,12 +32,6 @@ function page() {
           The goal is to solve a question or present data for a specific type of
           perspective. From that start, the function ended up being to project
           met or not met energy demand for a given solar project.
-        </p>
-        <p>
-          To get to a full v1.0, next steps for this project are to incorporate
-          costs. Which would analyze the total costs of a solar project,
-          potential PPA revenue, vs the losses when energy demand days are not
-          met and must be purchased from the grid.
         </p>
         <br />
         <p>
